@@ -111,12 +111,12 @@ def trustable_grimoirelab_score(
 
         output.write(json.dumps(package_metrics, indent=4))
     except SPDXParsingError as e:
-        raise e
         logging.error(e.messages[0])
+        raise e
         sys.exit(1)
     except OSError as e:
-        raise e
         logging.error(e)
+        raise e
         sys.exit(1)
 
 
